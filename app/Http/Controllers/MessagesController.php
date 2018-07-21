@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 // this is requesting from this path
 use Illuminate\Http\Request;
+// to use the Message model
+use App\Message;
 
 // anything available in the core Controller can be used
 // such as DispatchesJobs, ValidatesRequests and AuthorizesRequests
@@ -20,8 +22,23 @@ class MessagesController extends Controller
         'name' => 'required',
         'email' => 'required'
       ]);
-        return 'SUCCESS!';
-
-
+        // create a message variable and error message
+        // uses Eloquent database library, although SQL statements can be used here
+        $message = new Message;
+        $message->name = $request->input('name');
+        $message->email = $request->input('email');
+        $message->message = $request->input('message');
+        // save new Message
+        $message->save();
+        // redirect back to homepage after submit/save
+        return redirect('/')->with('success','Message Sent');
     }
+        public function getMessages(){
+          //this will get all of the messages from the variable
+          // by the model Message, and add them to a variable
+          $messages = Message::all();
+
+          // i need to figure this out exactly
+          return view('messages')->with('messages', $messages);
+        }
 }

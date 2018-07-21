@@ -23,6 +23,12 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/messages', function () {
+    return view('contact');
+});
+
+Route::get('/messages', 'MessagesController@getMessages');
+
 // submit button needs to be post method
 // it will be associated with the MessagesController
 // with a submit function
