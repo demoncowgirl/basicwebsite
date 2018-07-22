@@ -8,18 +8,17 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    You are logged in!
+                    You have succesfully registered!
 
                     <!-- do not include sidebar from app layout -->
                     @section('sidebar')
-                    @stop
+                    @endsection
 
                 </div>
             </div>

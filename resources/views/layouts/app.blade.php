@@ -18,12 +18,14 @@ integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhk
 
 </head>
 <body>
-	<div id="app">
+	<div id="app" class="bg-secondary text-dark">
 		@include('inc._navbar')
 		<div class="container">
 			@include('inc._messages')
 			<!-- logic can be added to a blade.php file -->
 			@if(Request::is('/'))
+			@include('inc._showcase')
+			@elseif(Request::is('/home'))
 			@include('inc._showcase')
 			@endif
 			<div class ="row">

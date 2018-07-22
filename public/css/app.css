@@ -8357,3 +8357,7 @@ button.close {
   background: #333;
 }
 
+.container {
+  opacity: 0.7;
+}
+

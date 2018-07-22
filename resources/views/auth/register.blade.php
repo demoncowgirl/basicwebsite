@@ -1,7 +1,8 @@
 @extends('layouts.loginapp')
 
 @section('content')
-<div class="container">
+
+<div class="container text-dark">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -64,7 +65,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Register
+                                  Register
                                 </button>
                             </div>
                         </div>
@@ -74,4 +75,5 @@
         </div>
     </div>
 </div>
+
 @endsection

@@ -19,7 +19,13 @@ Route::get('/about', 'PagesController@getAbout');
 
 Route::get('/contact', 'PagesController@getContact');
 
+Route::get('/successLogin', 'PagesController@getSuccessLogin');
+
+Route::get('/successRegister', 'PagesController@getSuccessRegister');
+
 Route::get('/messages', 'MessagesController@getMessages');
+
+Route::get('/logout', 'Auth\LoginController@logout');
 
 // submit button needs to be post method
 // it will be associated with the MessagesController
