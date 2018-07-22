@@ -11,21 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// it is not good practice to load the view from the routes web.php. it is better to create a PagesController
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/', 'PagesController@getHome');
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/about', 'PagesController@getAbout');
 
-Route::get('/messages', function () {
-    return view('contact');
-});
+Route::get('/contact', 'PagesController@getContact');
 
 Route::get('/messages', 'MessagesController@getMessages');
 
@@ -33,3 +25,28 @@ Route::get('/messages', 'MessagesController@getMessages');
 // it will be associated with the MessagesController
 // with a submit function
 Route::post('/contact/submit', 'MessagesController@submit');
+
+
+// Route::get('/', function () {
+//     return view('home');
+// });
+//
+// Route::get('/about', function () {
+//     return view('about');
+// });
+//
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
+//
+// Route::get('/messages', function () {
+//     return view('contact');
+// });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
